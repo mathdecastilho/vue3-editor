@@ -104,9 +104,9 @@ export default {
 
   methods: {
     initializeEditor() {
+      this.handleInitialContent();
       this.setupQuillEditor();
       this.checkForCustomImageHandler();
-      this.handleInitialContent();
       this.registerEditorEventListeners();
       this.$emit('ready', this.quill);
     },
@@ -176,7 +176,7 @@ export default {
     },
 
     handleInitialContent() {
-      if (this.modelValue) this.quill.root.innerHTML = this.modelValue; // Set initial editor content
+      if (this.modelValue) this.$refs.quillContainer.innerHTML = this.modelValue; // Set initial editor content
     },
 
     handleSelectionChange(range, oldRange) {
