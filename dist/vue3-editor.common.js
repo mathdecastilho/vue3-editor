@@ -4322,7 +4322,7 @@ var web_dom_collections_for_each = __webpack_require__("159b");
     registerCustomModules: function registerCustomModules(Quill) {
       if (this.customModules !== undefined) {
         this.customModules.forEach(function (customModule) {
-          Quill.register("modules/" + customModule.alias, customModule.module);
+          Quill.register("modules/" + customModule.alias, customModule.module, true);
         });
       }
     }
